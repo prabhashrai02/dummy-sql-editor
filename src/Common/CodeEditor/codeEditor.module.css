@@ -1,0 +1,78 @@
+.codeEditor {
+  display: flex;
+  width: 100%;
+  height: 300px;
+  border: 1px solid var(--editorBorderColor);
+  background-color: var(--editorBgColor);
+  color: var(--editorTextColor);
+  overflow: hidden;
+}
+
+.lineNumbers {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 10px;
+  width: 40px;
+  background-color: var(--lineNumberBgColor);
+  color: var(--editorTextColor);
+  user-select: none;
+  line-height: 20px;
+  overflow: hidden;
+  font-family: "Courier New", monospace;
+}
+
+.lineNumber {
+  font-size: 12px;
+  opacity: 0.6;
+  line-height: 20px;
+}
+
+.codeTextArea {
+  flex: 1;
+  padding: 10px;
+  border: none;
+  font-family: "Courier New", monospace;
+  resize: none;
+  background-color: var(--editorBgColor);
+  color: var(--editorTextColor);
+  outline: none;
+  caret-color: var(--editorTextColor);
+  overflow-y: auto;
+  line-height: 20px;
+}
+
+.codeTextArea::-webkit-scrollbar {
+  width: 10px;
+}
+
+.codeTextArea::-webkit-scrollbar-thumb {
+  background-color: var(--scrollBgColor);
+  border-radius: 5px;
+}
+
+@media screen and (max-width: 768px) {
+  .codeEditor {
+    height: auto;
+  }
+
+  .lineNumbers {
+    height: 200px;
+    border-right: 1px solid var(--editorBorderColor);
+  }
+
+  .codeTextArea {
+    height: 200px;
+  }
+}
+
+
+/* theme */
+
+.darkTheme {
+    --editorTextColor: #f0f0f0;
+    --editorBorderColor: #ccc;
+    --lineNumberBgColor: #333;
+    --editorBgColor: #1e1e1e;
+    --scrollBgColor: #555;
+}
