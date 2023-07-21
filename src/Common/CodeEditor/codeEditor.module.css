@@ -76,3 +76,63 @@
     --editorBgColor: #1e1e1e;
     --scrollBgColor: #555;
 }
+
+
+.lightTheme {
+    --editorTextColor: #333;
+    --editorBorderColor: #ccc;
+    --lineNumberBgColor: #f0f0f0;
+    --editorBgColor: #fff;
+    --scrollBgColor: #ccc;
+}
+
+.nightOwlTheme {
+    --editorTextColor: #f0f0f0;
+    --editorBorderColor: #555;
+    --lineNumberBgColor: #2d2b55;
+    --editorBgColor: #011627;
+    --scrollBgColor: #555;
+}
+
+.solarizedLightTheme {
+    --editorTextColor: #657b83;
+    --editorBorderColor: #93a1a1;
+    --lineNumberBgColor: #fdf6e3;
+    --editorBgColor: #fdf6e3;
+    --scrollBgColor: #eee8d5;
+  
+    --activeLineBgColor: #f0e68c; 
+    --activeLineNumColor: #657b83;
+}
+  
+.draculaTheme {
+    --editorTextColor: #f8f8f2;
+    --editorBorderColor: #6272a4;
+    --lineNumberBgColor: #44475a;
+    --editorBgColor: #282a36;
+    --scrollBgColor: #44475a;
+}
+
+.oceanicNextTheme {
+    --editorTextColor: #c3cee3;
+    --editorBorderColor: #384051;
+    --lineNumberBgColor: #2b303b;
+    --editorBgColor: #2b303b;
+    --scrollBgColor: #4f5b66;
+}
+  
+.oneDarkTheme {
+    --editorTextColor: #abb2bf;
+    --editorBorderColor: #282c34;
+    --lineNumberBgColor: #323742;
+    --editorBgColor: #282c34;
+    --scrollBgColor: #3b4048;
+}
+
+.gitHubTheme {
+    --editorTextColor: #333333;
+    --editorBorderColor: #e1e4e8;
+    --lineNumberBgColor: #f6f8fa;
+    --editorBgColor: #ffffff;
+    --scrollBgColor: #e1e4e8;
+}
