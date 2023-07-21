@@ -1,0 +1,12 @@
+.navbarContainer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 8px 32px;
+    background-color: var(--navbarBg);
+    border-bottom: 2px solid var(--borderColor);
+}
+
+.logoImg {
+    width: 96px;
+}
