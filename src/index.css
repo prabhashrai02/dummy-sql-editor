@@ -5,9 +5,37 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+
+  
+  background-color: var(--backgroundColor);
+  color: var(--textColor);
+}
+
+* {
+  transition: background-color 1s ease;
 }
 
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
+}
+
+.lightTheme {
+  --navbarBg: #ffffff;
+  --backgroundColor: #d1eaee;
+  --navbarColor: #d2d7da;  
+  --cardColor: radial-gradient(79.69% 102.24% at 100% 100.11%, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0)), radial-gradient(89.7% 115.09% at 3.43% 2.75%, rgba(255, 255, 255, 0.7), rgba(255, 255, 255, 0)), #99eedf;
+  --textColor: black;
+  --borderColor: rgb(201, 201, 201);
+  --brandColor: #183266;
+}
+
+.darkTheme {
+  --navbarBg: #2f2f2f;
+  --backgroundColor: #121212;  
+  --navbarColor: #475157;
+  --cardColor: radial-gradient(79.69% 102.24% at 100% 100.11%, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0)), radial-gradient(89.7% 115.09% at 3.43% 2.75%, rgba(50, 50, 50, 0.7), rgba(100, 100, 100, 0.5)), #a3a3a3;  
+  --textColor: white;
+  --borderColor: #d1d5db;
+  --brandColor: #f16eb6;
 }
