@@ -1,0 +1,29 @@
+.resultTable {
+  flex: 1;
+  overflow: auto;
+  border-spacing: 0;
+}
+
+.resultTable table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.resultTable th {
+  border: 1px solid var(--borderColor);
+  padding: 15px 8px;
+  background-color: var(--thBackgroundColor);
+  color: var(--thColor);
+  font-weight: bold;
+  position: sticky;
+  top: 0;
+  z-index: 1;
+  text-align: left;
+}
+
+.resultTable td {
+  background-color: var(--tdBackgroundColor);
+  color: var(--tdColor);
+  border: 1px solid var(--borderColor);
+  padding: 10px 8px;
+}
