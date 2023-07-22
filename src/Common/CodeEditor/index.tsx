@@ -4,8 +4,8 @@ import useCodeEditor from "./useCodeEditor";
 import styles from "./codeEditor.module.css";
 
 const CodeEditor = (props: CodeEditorProps) => {
-
-  const { initialCode, isExecuting, onRunButtonClick, onCancleButtonClick } = props;
+  const { initialCode, isExecuting, onRunButtonClick, onCancleButtonClick } =
+    props;
 
   const {
     code,
@@ -13,6 +13,7 @@ const CodeEditor = (props: CodeEditorProps) => {
     selectedTheme,
     textAreaRef,
     lineNumberRef,
+    onClearEditor,
     handleCodeChange,
     handleScroll,
     handleThemeChange,
@@ -28,15 +29,27 @@ const CodeEditor = (props: CodeEditorProps) => {
           options={themeOptions}
           onOptionChange={handleThemeChange}
         />
-        {isExecuting ? (
-          <button className={styles.cancelButton} onClick={onCancleButtonClick}>
-            Cancel
+        <div className={styles.buttonContainer}>
+          {isExecuting ? (
+            <button
+              className={styles.cancelButton}
+              onClick={onCancleButtonClick}
+            >
+              Cancel
+            </button>
+          ) : (
+            <button
+              className={styles.runButton}
+              onClick={() => onRunButtonClick(code)}
+            >
+              Run
+            </button>
+          )}
+
+          <button className={styles.clearButton} onClick={onClearEditor}>
+            Clear
           </button>
-        ) : (
-          <button className={styles.runButton} onClick={() => onRunButtonClick(code)}>
-            Run
-          </button>
-        )}
+        </div>
       </div>
       <div className={`${styles.codeEditor} ${styles[selectedTheme]}`}>
         <div ref={lineNumberRef} className={styles.lineNumbers}>
