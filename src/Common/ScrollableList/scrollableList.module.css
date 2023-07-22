@@ -1,0 +1,60 @@
+/* scrollableList.module.css */
+
+.scrollableList {
+  background-color: var(--backgroundColor);
+  border-radius: 4px;
+  padding: 16px;
+}
+
+.scrollableList h2 {
+  font-size: 18px;
+  font-weight: bold;
+  margin: 0;
+  padding-bottom: 8px;
+  color: var(--textColor);
+}
+
+.scrollableList input {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid var(--borderColor);
+  border-radius: 4px;
+  margin-bottom: 16px;
+  color: var(--textColor);
+  background-color: var(--tdBackgroundColor);
+}
+
+.scrollableList ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  height: 200px;
+  overflow: auto;
+}
+
+.scrollableList li {
+  padding: 8px;
+  border-bottom: 1px solid var(--borderColor);
+  cursor: pointer;
+  color: var(--textColor);
+}
+
+.scrollableList li:last-child {
+  border-bottom: none;
+}
+
+.scrollableList li:hover {
+  background-color: var(--thBackgroundColor);
+  color: var(--thColor);
+}
+
+.scrollableList ul::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+}
+
+.scrollableList ul::-webkit-scrollbar-thumb {
+  background: var(--tableScrollThumbColor);
+  border-radius: 5px;
+  cursor: pointer;
+}
