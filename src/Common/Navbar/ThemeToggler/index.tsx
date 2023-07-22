@@ -4,8 +4,8 @@ import DayNightToggle from 'react-day-and-night-toggle';
 
 
 const ThemeToggler = () => {
-    const [currentTheme, setCurrentTheme] = useState<Theme>("lightTheme");
-    const [isDarkTheme, setisDarkTheme] = useState<boolean>(false);
+    const [currentTheme, setCurrentTheme] = useState<Theme>("darkTheme");
+    const [isDarkTheme, setisDarkTheme] = useState<boolean>(true);
     
     useEffect(() => {
         document.body.classList.add(currentTheme);
