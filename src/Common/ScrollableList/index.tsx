@@ -5,7 +5,7 @@ import TruncateText from "../TruncateText";
 import styles from "./scrollableList.module.css";
 
 const ScrollableList = (props: ScrollableListProps) => {
-  const { title, items, onItemClick, maxVisibleChars = 50 } = props;
+  const { title, items, onItemClick, maxVisibleChars = 40 } = props;
 
   const [searchQuery, setSearchQuery] = useState<string>("");
 
