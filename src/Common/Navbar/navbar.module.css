@@ -7,8 +7,9 @@
     padding: 8px 32px;
     background-color: var(--navbarBg);
     border-bottom: 2px solid var(--borderColor);
+    z-index: 2;
 }
 
 .logoImg {
-    width: 96px;
+    width: 48px;
 }
