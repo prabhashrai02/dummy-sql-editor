@@ -1,6 +1,7 @@
-import { historyItems, queryHistory, queryToTableMap } from "./homeHelper";
-
 import { useState } from "react";
+
+import { queryHistory, queryToTableMap } from "./homeHelper";
+
 import { table6 } from "../../Constants/table";
 
 export const useHome = () => {
@@ -22,6 +23,12 @@ export const useHome = () => {
       if (queryToTableMap[code]) {
         const data = queryToTableMap[code].data;
         const header = queryToTableMap[code].columnsHeader;
+        setTableData(data);
+        setTableHeader(header);
+      }
+      else if (queryHistory[code]) {
+        const data = queryHistory[code].data;
+        const header = queryHistory[code].columnsHeader;
         setTableData(data);
         setTableHeader(header);
       }
