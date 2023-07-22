@@ -8,7 +8,7 @@ const Navbar = () => {
 
     return (
         <div className={styles.navbarContainer}>
-            <img src={logo} className={styles.logoImg} />
+            <img src={logo} className={styles.logoImg} alt='dummy sql editor' />
             <ThemeToggler />
         </div>
     )
