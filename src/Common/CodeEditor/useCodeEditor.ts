@@ -28,6 +28,10 @@ const useCodeEditor = (initialCode: string = "", initialTheme: string = "darkThe
   };
 
   useEffect(() => {
+    setCode(initialCode);
+  }, [initialCode]);
+
+  useEffect(() => {
     syncScroll();
   }, [code]);
 
