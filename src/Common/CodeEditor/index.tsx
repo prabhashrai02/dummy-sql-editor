@@ -1,37 +1,20 @@
-import React, { useState, useRef, useEffect } from "react";
-
 import InputDropdown from "../InputDropdown";
+import useCodeEditor from "./useCodeEditor";
 
 import styles from "./codeEditor.module.css";
 
-const CodeEditor = () => {
-  const [code, setCode] = useState<string>("");
-  const [selectedTheme, setSelectedTheme] = useState<string>("darkTheme");
-  const textAreaRef = useRef<HTMLTextAreaElement>(null);
-  const lineNumberRef = useRef<HTMLDivElement>(null);
+const CodeEditor = ({ initialCode }: CodeEditorProps) => {
 
-  const handleCodeChange = (e: React.ChangeEvent<HTMLTextAreaElement>) => {
-    setCode(e.target.value);
-  };
-
-  const syncScroll = () => {
-    if (textAreaRef.current && lineNumberRef.current) {
-      const lineNumberTop = textAreaRef.current.scrollTop;
-      lineNumberRef.current.scrollTop = lineNumberTop;
-    }
-  };
-
-  useEffect(() => {
-    syncScroll();
-  }, [code]);
-
-  const handleScroll = () => {
-    syncScroll();
-  };
-
-  const handleThemeChange = (theme: string) => {
-    setSelectedTheme(theme);
-  };
+  const {
+    code,
+    themeOptions,
+    selectedTheme,
+    textAreaRef,
+    lineNumberRef,
+    handleCodeChange,
+    handleScroll,
+    handleThemeChange,
+  } = useCodeEditor(initialCode, "darkTheme");
 
   return (
     <div>
@@ -65,14 +48,8 @@ const CodeEditor = () => {
   );
 };
 
-const themeOptions = [
-  { key: "Light Theme", value: "lightTheme" },
-  { key: "Dark Theme", value: "darkTheme" },
-  { key: "Night Owl Theme", value: "nightOwlTheme" },
-  { key: "Solarized Light Theme", value: "solarizedLightTheme" },
-  { key: "Dracula Theme", value: "draculaTheme" },
-  { key: "Oceanic Next Theme", value: "oceanicNextTheme" },
-  { key: "GitHub Theme", value: "gitHubTheme" },
-];
+type CodeEditorProps = {
+  initialCode?: string;
+};
 
 export default CodeEditor;
