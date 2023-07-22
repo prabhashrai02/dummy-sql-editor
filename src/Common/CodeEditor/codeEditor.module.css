@@ -97,7 +97,7 @@
 .solarizedLightTheme {
     --editorTextColor: #657b83;
     --editorBorderColor: #93a1a1;
-    --lineNumberBgColor: #fdf6e3;
+    --lineNumberBgColor: #f1ebda;
     --editorBgColor: #fdf6e3;
     --scrollBgColor: #eee8d5;
   
@@ -116,17 +116,9 @@
 .oceanicNextTheme {
     --editorTextColor: #c3cee3;
     --editorBorderColor: #384051;
-    --lineNumberBgColor: #2b303b;
+    --lineNumberBgColor: #373d49;
     --editorBgColor: #2b303b;
     --scrollBgColor: #4f5b66;
-}
-  
-.oneDarkTheme {
-    --editorTextColor: #abb2bf;
-    --editorBorderColor: #282c34;
-    --lineNumberBgColor: #323742;
-    --editorBgColor: #282c34;
-    --scrollBgColor: #3b4048;
 }
 
 .gitHubTheme {
