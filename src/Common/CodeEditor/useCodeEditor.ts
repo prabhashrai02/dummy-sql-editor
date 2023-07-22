@@ -20,6 +20,10 @@ const useCodeEditor = (initialCode: string = "", initialTheme: string = "darkThe
     setCode(e.target.value);
   };
 
+  const onClearEditor = () => {
+    setCode('');
+  };
+
   const syncScroll = () => {
     if (textAreaRef.current && lineNumberRef.current) {
       const lineNumberTop = textAreaRef.current.scrollTop;
@@ -49,6 +53,7 @@ const useCodeEditor = (initialCode: string = "", initialTheme: string = "darkThe
     selectedTheme,
     textAreaRef,
     lineNumberRef,
+    onClearEditor,
     handleCodeChange,
     handleScroll,
     handleThemeChange,
