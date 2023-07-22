@@ -8,6 +8,32 @@
   overflow: hidden;
 }
 
+.toolbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 16px;
+}
+
+.runButton,
+.cancelButton {
+  padding: 8px 16px;
+  font-size: 14px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.runButton {
+  background-color: var(--buttonColor);
+  color: var(--constantWhite);
+}
+
+.cancelButton {
+  background-color: var(--cancelButtonColor);
+  color: var(--constantWhite);
+}
+
 .lineNumbers {
   display: flex;
   flex-direction: column;

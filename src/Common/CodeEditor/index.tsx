@@ -3,7 +3,9 @@ import useCodeEditor from "./useCodeEditor";
 
 import styles from "./codeEditor.module.css";
 
-const CodeEditor = ({ initialCode }: CodeEditorProps) => {
+const CodeEditor = (props: CodeEditorProps) => {
+
+  const { initialCode, isExecuting, onRunButtonClick, onCancleButtonClick } = props;
 
   const {
     code,
@@ -26,6 +28,15 @@ const CodeEditor = ({ initialCode }: CodeEditorProps) => {
           options={themeOptions}
           onOptionChange={handleThemeChange}
         />
+        {isExecuting ? (
+          <button className={styles.cancelButton} onClick={onCancleButtonClick}>
+            Cancel
+          </button>
+        ) : (
+          <button className={styles.runButton} onClick={() => onRunButtonClick(code)}>
+            Run
+          </button>
+        )}
       </div>
       <div className={`${styles.codeEditor} ${styles[selectedTheme]}`}>
         <div ref={lineNumberRef} className={styles.lineNumbers}>
@@ -50,6 +61,9 @@ const CodeEditor = ({ initialCode }: CodeEditorProps) => {
 
 type CodeEditorProps = {
   initialCode?: string;
+  onRunButtonClick: (code: string) => void;
+  onCancleButtonClick: () => void;
+  isExecuting: boolean;
 };
 
 export default CodeEditor;
