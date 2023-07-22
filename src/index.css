@@ -29,6 +29,11 @@ code {
   --textColor: black;
   --borderColor: rgb(201, 201, 201);
   --brandColor: #183266;
+  --tableScrollThumbColor: #9ca3af;
+  --thBackgroundColor: #0ea5e9;
+  --thColor: white;
+  --tdBackgroundColor: #f9fafb;
+  --tdColor: #2f2e41;
 }
 
 .darkTheme {
@@ -39,4 +44,9 @@ code {
   --textColor: white;
   --borderColor: #d1d5db;
   --brandColor: #f16eb6;
+  --tableScrollThumbColor: #d1d5db;
+  --thBackgroundColor: #6b7280;
+  --thColor: #f9fafb;
+  --tdBackgroundColor: #374151;
+  --tdColor: #f9fafb;
 }
