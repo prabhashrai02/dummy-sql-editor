@@ -2,7 +2,7 @@
   width: 500px;
   width: 100%;
 
-  height: 375px;
+  height: 380px;
   overflow: hidden;
 }
 
@@ -30,6 +30,10 @@
 .result::-webkit-scrollbar {
   width: 10px;
   height: 10px;
+}
+
+.result::-webkit-scrollbar-track {
+  background: var(--thColor);
 }
 
 .result::-webkit-scrollbar-thumb {

@@ -6,7 +6,7 @@ import styles from "./codeEditor.module.css";
 
 const CodeEditor = () => {
   const [code, setCode] = useState<string>("");
-  const [selectedTheme, setSelectedTheme] = useState<string>("lightTheme");
+  const [selectedTheme, setSelectedTheme] = useState<string>("darkTheme");
   const textAreaRef = useRef<HTMLTextAreaElement>(null);
   const lineNumberRef = useRef<HTMLDivElement>(null);
 
@@ -37,7 +37,8 @@ const CodeEditor = () => {
     <div>
       <div className={styles.toolbar}>
         <InputDropdown
-          label={""}
+          label={"Theme"}
+          labelPosition="left"
           selectedOption={selectedTheme}
           options={themeOptions}
           onOptionChange={handleThemeChange}
