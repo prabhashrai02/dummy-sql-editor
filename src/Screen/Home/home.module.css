@@ -1,3 +1,27 @@
 .homepageContainer {
     display: flex;
+    justify-content: space-between;
+    width: 100%;
+}
+
+.codingArea {
+    width: 70%;
+}
+
+@media screen and (max-width: 768px) {
+    .homepageContainer {
+        flex-direction: column;
+        flex-direction: column-reverse;
+        align-items: center;
+        justify-content: space-between;
+        width: 100%;
+    }
+
+    .sidebar {
+        width: 95%;
+    }
+    
+    .codingArea {
+        width: 95%;
+    }
 }
