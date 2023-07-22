@@ -15,7 +15,14 @@
   margin-bottom: 16px;
 }
 
+.buttonContainer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
 .runButton,
+.clearButton,
 .cancelButton {
   padding: 8px 16px;
   font-size: 14px;
@@ -29,9 +36,14 @@
   color: var(--constantWhite);
 }
 
+.clearButton,
 .cancelButton {
   background-color: var(--cancelButtonColor);
   color: var(--constantWhite);
+}
+
+.clearButton {
+  margin-left: 8px;
 }
 
 .lineNumbers {
@@ -153,4 +165,16 @@
     --lineNumberBgColor: #f6f8fa;
     --editorBgColor: #ffffff;
     --scrollBgColor: #e1e4e8;
+}
+
+
+@media screen and (max-width: 500px) {
+  .toolbar {
+    flex-direction: column;
+  }
+
+  .buttonContainer {
+    width: 100%;
+    justify-content: space-between;
+  }
 }
