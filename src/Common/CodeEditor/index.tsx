@@ -13,6 +13,7 @@ const CodeEditor = (props: CodeEditorProps) => {
     selectedTheme,
     textAreaRef,
     lineNumberRef,
+    isButtonDisable,
     onClearEditor,
     handleCodeChange,
     handleScroll,
@@ -39,14 +40,15 @@ const CodeEditor = (props: CodeEditorProps) => {
             </button>
           ) : (
             <button
+              disabled={isButtonDisable}
               className={styles.runButton}
               onClick={() => onRunButtonClick(code)}
-            >
+              >
               Run
             </button>
           )}
 
-          <button className={styles.clearButton} onClick={onClearEditor}>
+          <button disabled={isButtonDisable} className={styles.clearButton} onClick={onClearEditor}>
             Clear
           </button>
         </div>

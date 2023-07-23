@@ -10,9 +10,9 @@ const useCodeEditor = (
   initialCode: string = "",
   initialTheme: string = "darkTheme"
 ) => {
-  const initialCodeEditorTheme =
-    getLocalStorageData<string>(CODE_EDITOR_THEME_KEY) || initialTheme;
+  const initialCodeEditorTheme = getLocalStorageData<string>(CODE_EDITOR_THEME_KEY) || initialTheme;
 
+  const [isButtonDisable, setIsButtonDisable] = useState<boolean>(true);
   const [code, setCode] = useState<string>(initialCode);
   const [selectedTheme, setSelectedTheme] = useState<string>(
     initialCodeEditorTheme
@@ -29,6 +29,10 @@ const useCodeEditor = (
     { key: "Oceanic Next Theme", value: "oceanicNextTheme" },
     { key: "GitHub Theme", value: "gitHubTheme" },
   ];
+
+  useEffect(() => {
+    setIsButtonDisable(code.trim() === "");
+  }, [code])
 
   const handleCodeChange = (e: React.ChangeEvent<HTMLTextAreaElement>) => {
     setCode(e.target.value);
@@ -68,6 +72,7 @@ const useCodeEditor = (
     selectedTheme,
     textAreaRef,
     lineNumberRef,
+    isButtonDisable,
     onClearEditor,
     handleCodeChange,
     handleScroll,

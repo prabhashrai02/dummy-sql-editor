@@ -22,6 +22,12 @@
   justify-content: center;
 }
 
+.runButton:disabled,
+.clearButton:disabled {
+  background-color: var(--thBackgroundColor);
+  color: var(--thColor);
+}
+
 .runButton,
 .clearButton,
 .cancelButton {
@@ -89,22 +95,6 @@
   background-color: var(--scrollBgColor);
   border-radius: 5px;
 }
-
-@media screen and (max-width: 768px) {
-  .codeEditor {
-    height: auto;
-  }
-
-  .lineNumbers {
-    height: 200px;
-    border-right: 1px solid var(--editorBorderColor);
-  }
-
-  .codeTextArea {
-    height: 200px;
-  }
-}
-
 
 /* theme */
 
