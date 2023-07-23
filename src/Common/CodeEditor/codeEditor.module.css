@@ -24,8 +24,8 @@
 
 .runButton:disabled,
 .clearButton:disabled {
-  background-color: var(--thBackgroundColor);
-  color: var(--thColor);
+  background-color: var(--disableButtonBgColor);
+  color: var(--constantWhite);
 }
 
 .runButton,

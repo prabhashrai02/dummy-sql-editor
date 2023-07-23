@@ -37,6 +37,7 @@ code {
   --tdColor: #333333;
   --buttonColor: #55a55a;
   --cancelButtonColor: #e91e63;
+  --disableButtonBgColor: #6b7280;
 }
 
 .darkTheme {
@@ -55,4 +56,5 @@ code {
   --tdColor: #f9fafb;
   --buttonColor: #4caf50;
   --cancelButtonColor: #e91e63;
+  --disableButtonBgColor: #6b7280;
 }
