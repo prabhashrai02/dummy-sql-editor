@@ -1,40 +1,47 @@
 .loaderContainer {
-    display: flex;
-    justify-content: center;
-    align-items: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.loader {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100px;
+  height: 60px;
+  position: relative;
+}
+
+.circle {
+  width: 20px;
+  height: 20px;
+  background-color: var(--brandColor);
+  border-radius: 50%;
+  position: absolute;
+  animation: bounce 1.5s infinite cubic-bezier(0.5, 0, 1, 1);
+}
+
+.circle:nth-child(1) {
+  left: 5px;
+  animation-delay: -0.2s;
+}
+
+.circle:nth-child(2) {
+  left: 40px;
+  animation-delay: -0.1s;
+}
+
+.circle:nth-child(3) {
+  left: 75px;
+  animation-delay: 0s;
+}
+
+@keyframes bounce {
+  0%, 100% {
+    transform: translateY(0);
   }
-  
-  .loader {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 80px;
-    height: 80px;
-    position: relative;
-    transform: rotate(45deg);
+  50% {
+    transform: translateY(-25px);
   }
-  
-  .circle {
-    width: 15px;
-    height: 15px;
-    background-color: var(--brandColor);
-    border-radius: 50%;
-    position: absolute;
-    animation: spin 1.2s infinite ease;
-  }
-  
-  @keyframes spin {
-    0% {
-      transform: translateY(0) scale(1);
-      opacity: 0.7;
-    }
-    50% {
-      transform: translateY(-25px) scale(1.2);
-      opacity: 0.3;
-    }
-    100% {
-      transform: translateY(0) scale(1);
-      opacity: 0.7;
-    }
-  }
-  
+}
