@@ -81,12 +81,14 @@
   color: var(--editorTextColor);
   outline: none;
   caret-color: var(--editorTextColor);
-  overflow-y: auto;
+  overflow: auto;
   line-height: 20px;
+  white-space: nowrap;
 }
 
 .codeTextArea::-webkit-scrollbar {
   width: 10px;
+  height: 10px;
 }
 
 .codeTextArea::-webkit-scrollbar-thumb {
