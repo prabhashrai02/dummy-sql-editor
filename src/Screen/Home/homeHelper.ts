@@ -2,6 +2,8 @@
 import { sampleQueries } from "../../Constants/sampleQueries";
 import { QueryTable, tables } from "../../Constants/table";
 
+import { getLocalStorageData } from "../../Utils/storageUtils";
+
 export const sampleQuery: QueryTable = {
   [sampleQueries[0]]: tables.table1,
   [sampleQueries[1]]: tables.table2,
@@ -10,4 +12,10 @@ export const sampleQuery: QueryTable = {
   [sampleQueries[4]]: tables.table5,
 };
 
-export const queryHistory: QueryTable = {};
+export const HISTORY_STORAGE_KEY = "queryHistoryData";
+
+const initialQueryHistoryData = getLocalStorageData<QueryTable>(HISTORY_STORAGE_KEY) || {};
+
+export const queryHistory: QueryTable = initialQueryHistoryData;
+
+export const initialHistoryItems = Object.keys(initialQueryHistoryData);

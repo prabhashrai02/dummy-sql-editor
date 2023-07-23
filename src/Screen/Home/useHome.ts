@@ -1,12 +1,14 @@
 import { useEffect, useState, useRef } from "react";
 
-import { queryHistory, sampleQuery } from "./homeHelper";
+import { setLocalStorageData } from "../../Utils/storageUtils";
+
+import { HISTORY_STORAGE_KEY, initialHistoryItems, queryHistory, sampleQuery } from "./homeHelper";
 import { tables } from "../../Constants/table";
 
 export const useHome = () => {
   const [inputCode, setInputCode] = useState("");
   const [isExecuting, setIsExecuting] = useState(false);
-  const [historyItems, setHistoryItems] = useState<string[]>([]);
+  const [historyItems, setHistoryItems] = useState<string[]>(initialHistoryItems);
 
   const [tableData, setTableData] = useState<string[][]>(tables.table6.data);
   const [tableHeader, setTableHeader] = useState<string[]>(tables.table6.columnsHeader);
@@ -60,6 +62,7 @@ export const useHome = () => {
       if (!queryHistory[code]) {
         setHistoryItems((prevHistoryItems) => [...prevHistoryItems, code]);
         queryHistory[code] = { data: latestTableData.current, columnsHeader: latestTableHeader.current };
+        setLocalStorageData(HISTORY_STORAGE_KEY, queryHistory);
       }
 
       timerRef.current = null;
