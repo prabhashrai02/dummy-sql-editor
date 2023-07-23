@@ -46,7 +46,7 @@
 }
 
 .result {
-  height: calc(100% - 48px);
+  height: calc(100% - 60px);
   overflow: auto;
   display: flex;
   flex-direction: column;
