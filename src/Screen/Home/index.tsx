@@ -19,6 +19,7 @@ const Home = () => {
     setInputCode,
     runCodeClick,
     cancelCodeClick,
+    onclearHistoryClick,
   } = useHome();
 
   return (
@@ -34,6 +35,7 @@ const Home = () => {
         <Card>
           <ScrollableList
             title="History"
+            onClearClick={onclearHistoryClick}
             items={historyItems}
             onItemClick={(item) => setInputCode(item)}
           />

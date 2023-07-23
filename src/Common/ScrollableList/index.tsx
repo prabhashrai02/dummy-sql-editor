@@ -1,17 +1,27 @@
-import React, { useState } from "react";
-
+import React, { useEffect, useState } from "react";
 import TruncateText from "../TruncateText";
 
 import styles from "./scrollableList.module.css";
 
 const ScrollableList = (props: ScrollableListProps) => {
-  const { title, items, onItemClick, maxVisibleChars = 40 } = props;
+  const {
+    title,
+    items,
+    maxVisibleChars = 40,
+    onItemClick,
+    onClearClick,
+  } = props;
 
-  const [searchQuery, setSearchQuery] = useState<string>("");
+  const [searchQuery, setSearchQuery] = useState("");
+  const [isClearDisable, setIsClearDisable] = useState(false);
 
   const filteredItems = items.filter((item) =>
     item.toLowerCase().includes(searchQuery.toLowerCase())
   );
+
+  useEffect(() => {
+    setIsClearDisable(filteredItems.length === 0);
+  }, [filteredItems]);
 
   const handleSearchChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     setSearchQuery(event.target.value);
@@ -19,7 +29,18 @@ const ScrollableList = (props: ScrollableListProps) => {
 
   return (
     <div className={styles.scrollableList}>
-      <h2>{title}</h2>
+      <div className={styles.headingButtonContainer}>
+        <h2>{title}</h2>
+        {onClearClick && (
+          <button
+            disabled={isClearDisable}
+            className={styles.clearButton}
+            onClick={onClearClick}
+          >
+            Clear
+          </button>
+        )}
+      </div>
       <input
         type="text"
         placeholder="Search..."
@@ -44,7 +65,7 @@ type ScrollableListProps = {
   items: string[];
   onItemClick: (item: string) => void;
   maxVisibleChars?: number;
-  containerHeight?: string;
+  onClearClick?: () => void;
 };
 
 export default ScrollableList;

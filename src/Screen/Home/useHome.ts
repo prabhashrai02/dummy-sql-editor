@@ -1,6 +1,6 @@
 import { useEffect, useState, useRef } from "react";
 
-import { setLocalStorageData } from "../../Utils/storageUtils";
+import { deleteLocalStorageData, setLocalStorageData } from "../../Utils/storageUtils";
 
 import { tables } from "../../Constants/table";
 import { HISTORY_STORAGE_KEY } from "../../Constants/localStorageKeys";
@@ -79,6 +79,11 @@ export const useHome = () => {
     }
   };
 
+  const onclearHistoryClick = () => {
+    setHistoryItems([]);
+    deleteLocalStorageData(HISTORY_STORAGE_KEY);
+  }
+
   return {
     tableData,
     inputCode,
@@ -88,5 +93,6 @@ export const useHome = () => {
     setInputCode,
     runCodeClick,
     cancelCodeClick,
+    onclearHistoryClick,
   };
 };

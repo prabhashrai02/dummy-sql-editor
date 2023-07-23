@@ -17,3 +17,11 @@ export const getLocalStorageData = <T>(key: string): T | null => {
     return null;
   }
 };
+
+export const deleteLocalStorageData = (key: string): void => {
+  try {
+    localStorage.removeItem(key);
+  } catch (error) {
+    console.error("Error while deleting data from local storage:", error);
+  }
+};
