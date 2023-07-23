@@ -1,5 +1,3 @@
-import { useState } from "react";
-
 import InputDropdown from "../InputDropdown";
 import useCodeEditor from "./useCodeEditor";
 
@@ -11,6 +9,8 @@ const CodeEditor = (props: CodeEditorProps) => {
 
   const {
     code,
+    fontSize,
+    lineHeight,
     fontOptions,
     themeOptions,
     selectedTheme,
@@ -21,15 +21,8 @@ const CodeEditor = (props: CodeEditorProps) => {
     handleCodeChange,
     handleScroll,
     handleThemeChange,
+    handleFontSizeChange,
   } = useCodeEditor(initialCode, "darkTheme");
-
-  const [fontSize, setFontSize] = useState<number>(16);
-
-  const lineHeight = fontSize * 1.5;
-
-  const handleFontSizeChange = (size: string) => {
-    setFontSize(Number(size));
-  };
 
   return (
     <div>

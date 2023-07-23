@@ -1,24 +1,24 @@
 import { useState, useRef, useEffect } from "react";
 
-import { CODE_EDITOR_THEME_KEY } from "../../Constants/localStorageKeys";
+import { CODE_EDITOR_FONT_SIZE_KEY, CODE_EDITOR_THEME_KEY } from "../../Constants/localStorageKeys";
 import {
   getLocalStorageData,
   setLocalStorageData,
 } from "../../Utils/storageUtils";
 
-const useCodeEditor = (
-  initialCode: string = "",
-  initialTheme: string = "darkTheme"
-) => {
+const useCodeEditor = ( initialCode: string = "", initialTheme: string = "darkTheme" ) => {
   const initialCodeEditorTheme = getLocalStorageData<string>(CODE_EDITOR_THEME_KEY) || initialTheme;
+  const initialCodeFontSizeTheme = getLocalStorageData<string>(CODE_EDITOR_FONT_SIZE_KEY) || "16";
 
   const [isButtonDisable, setIsButtonDisable] = useState<boolean>(true);
   const [code, setCode] = useState<string>(initialCode);
-  const [selectedTheme, setSelectedTheme] = useState<string>(
-    initialCodeEditorTheme
-  );
+  const [selectedTheme, setSelectedTheme] = useState<string>( initialCodeEditorTheme );
+  const [fontSize, setFontSize] = useState<number>(Number(initialCodeFontSizeTheme));
+
   const textAreaRef = useRef<HTMLTextAreaElement>(null);
   const lineNumberRef = useRef<HTMLDivElement>(null);
+
+  const lineHeight = fontSize * 1.5;
 
   const themeOptions = [
     { key: "Light Theme", value: "lightTheme" },
@@ -39,8 +39,21 @@ const useCodeEditor = (
   ];
 
   useEffect(() => {
+    setCode(initialCode);
+  }, [initialCode]);
+
+  useEffect(() => {
+    syncScroll();
+  }, [code]);
+  
+  useEffect(() => {
     setIsButtonDisable(code.trim() === "");
   }, [code])
+
+  const handleFontSizeChange = (size: string) => {
+    setFontSize(Number(size));
+    setLocalStorageData(CODE_EDITOR_FONT_SIZE_KEY, size);
+  };
 
   const handleCodeChange = (e: React.ChangeEvent<HTMLTextAreaElement>) => {
     setCode(e.target.value);
@@ -57,14 +70,6 @@ const useCodeEditor = (
     }
   };
 
-  useEffect(() => {
-    setCode(initialCode);
-  }, [initialCode]);
-
-  useEffect(() => {
-    syncScroll();
-  }, [code]);
-
   const handleScroll = () => {
     syncScroll();
   };
@@ -76,6 +81,8 @@ const useCodeEditor = (
 
   return {
     code,
+    fontSize,
+    lineHeight,
     fontOptions,
     themeOptions,
     selectedTheme,
@@ -86,6 +93,7 @@ const useCodeEditor = (
     handleCodeChange,
     handleScroll,
     handleThemeChange,
+    handleFontSizeChange,
   };
 };
 
