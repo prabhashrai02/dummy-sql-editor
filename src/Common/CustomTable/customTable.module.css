@@ -6,11 +6,32 @@
   overflow: hidden;
 }
 
+.tableHeadContainer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 16px;
+}
+
 .head {
   font-size: 17px;
   font-weight: bold;
-  margin-top: 5px;
   padding: 10px;
+}
+
+.exportButton {
+  background-color: var(--buttonColor);
+  color: var(--constantWhite);
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+  transition: background-color 0.2s ease-in-out;
+}
+
+.exportButton {
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
 }
 
 .loader {
@@ -45,5 +66,3 @@
   border-radius: 5px;
   cursor: pointer;
 }
-
-
