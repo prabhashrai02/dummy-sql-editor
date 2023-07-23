@@ -2,7 +2,30 @@
   "data": [
     ["Alex", "Male", "29", "Manager", "Australia"],
     ["Sophie", "Female", "35", "Lawyer", "Italy"],
-    ["Daniel", "Male", "26", "Chef", "Russia"]
+    ["Daniel", "Male", "26", "Chef", "Russia"],
+    ["Emma", "Female", "32", "Doctor", "Canada"],
+    ["James", "Male", "30", "Software Engineer", "USA"],
+    ["Olivia", "Female", "28", "Marketing Manager", "UK"],
+    ["Noah", "Male", "33", "Financial Analyst", "Germany"],
+    ["Ava", "Female", "29", "Business Consultant", "France"],
+    ["Liam", "Male", "31", "Product Manager", "Spain"],
+    ["Mia", "Female", "27", "Graphic Designer", "Australia"],
+    ["Oliver", "Male", "28", "Architect", "Italy"],
+    ["Sophia", "Female", "30", "Research Scientist", "Russia"],
+    ["William", "Male", "26", "Investment Banker", "Canada"],
+    ["Isabella", "Female", "35", "Software Developer", "USA"],
+    ["Ethan", "Male", "29", "UX/UI Designer", "UK"],
+    ["Charlotte", "Female", "33", "Data Analyst", "Germany"],
+    ["Benjamin", "Male", "27", "Marketing Specialist", "France"],
+    ["Amelia", "Female", "31", "Business Analyst", "Spain"],
+    ["Alexander", "Male", "28", "Product Designer", "Australia"],
+    ["Luna", "Female", "30", "Event Planner", "Italy"],
+    ["Lucas", "Male", "34", "Social Media Manager", "Russia"],
+    ["Chloe", "Female", "29", "Content Writer", "Canada"],
+    ["Mason", "Male", "31", "Business Consultant", "USA"],
+    ["Harper", "Female", "26", "Research Scientist", "UK"],
+    ["Elijah", "Male", "33", "Data Scientist", "Germany"],
+    ["Evelyn", "Female", "27", "UX/UI Engineer", "France"]
   ],
   "columnsHeader": ["Name", "Gender", "Age", "Occupation", "Country"]
 }

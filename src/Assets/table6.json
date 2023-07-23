@@ -9,7 +9,17 @@
     ["Mohammed Shami", "Bowler", "31", "120", "200", "28.00"],
     ["Hardik Pandya", "All-Rounder", "27", "100", "3000", "35.00"],
     ["Yuzvendra Chahal", "Bowler", "31", "80", "100", "15.00"],
-    ["Ajinkya Rahane", "Batsman", "33", "100", "4500", "40.00"]
+    ["Ajinkya Rahane", "Batsman", "33", "100", "4500", "40.00"],
+    ["Rishabh Pant", "Batsman", "23", "50", "1500", "30.00"],
+    ["Shreyas Iyer", "Batsman", "26", "90", "3200", "35.56"],
+    ["Mayank Agarwal", "Batsman", "30", "70", "2700", "38.57"],
+    ["Bhuvneshwar Kumar", "Bowler", "31", "140", "200", "20.00"],
+    ["Shardul Thakur", "Bowler", "29", "60", "300", "25.00"],
+    ["Navdeep Saini", "Bowler", "28", "40", "120", "15.00"],
+    ["Rahul Chahar", "Bowler", "22", "30", "50", "10.00"],
+    ["Suryakumar Yadav", "Batsman", "31", "40", "1500", "37.50"],
+    ["Ishan Kishan", "Batsman", "23", "20", "600", "30.00"],
+    ["Deepak Chahar", "Bowler", "29", "60", "50", "8.33"]
   ],
   "columnsHeader": [
     "Player Name",

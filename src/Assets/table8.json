@@ -2,7 +2,24 @@
   "data": [
     ["Alice", "Female", "24", "Artist", "France"],
     ["Bob", "Male", "27", "Developer", "Germany"],
-    ["Eva", "Female", "22", "Student", "Spain"]
+    ["Eva", "Female", "22", "Student", "Spain"],
+    ["Lucas", "Male", "29", "Photographer", "Italy"],
+    ["Lena", "Female", "26", "Fashion Designer", "Sweden"],
+    ["Noah", "Male", "28", "Investment Banker", "Switzerland"],
+    ["Sophia", "Female", "23", "Content Writer", "Netherlands"],
+    ["Liam", "Male", "25", "Social Media Manager", "Norway"],
+    ["Mia", "Female", "30", "Event Planner", "Denmark"],
+    ["Benjamin", "Male", "31", "Product Designer", "Belgium"],
+    ["Amelia", "Female", "27", "UX/UI Engineer", "Austria"],
+    ["Alexander", "Male", "29", "Marketing Specialist", "Poland"],
+    ["Charlotte", "Female", "26", "Business Consultant", "Czech Republic"],
+    ["Michael", "Male", "32", "Research Scientist", "Hungary"],
+    ["Isabella", "Female", "28", "Data Analyst", "Portugal"],
+    ["Ethan", "Male", "30", "Software Developer", "Greece"],
+    ["Ava", "Female", "25", "Graphic Designer", "Ireland"],
+    ["Daniel", "Male", "27", "Architect", "Finland"],
+    ["Olivia", "Female", "31", "HR Manager", "Slovakia"],
+    ["William", "Male", "33", "Business Analyst", "Estonia"]
   ],
   "columnsHeader": ["Name", "Gender", "Age", "Occupation", "Country"]
 }
