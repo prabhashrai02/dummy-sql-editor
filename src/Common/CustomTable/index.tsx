@@ -1,6 +1,7 @@
 import { memo } from "react";
 
 import ReactTable from "./ReactTable";
+import Loader from "../Loader";
 
 import styles from "./customTable.module.css";
 
@@ -13,7 +14,7 @@ const CustomTable = ({ columns, data, resultIsLoading }: CustomTableProps) => {
     <div className={styles.resultContainer}>
       <div className={styles.head}>Result / Output</div>
       <div className={styles.loader}>
-        {resultIsLoading && <div>Loading...</div>}
+        {resultIsLoading && <Loader />}
         {!resultIsLoading && isDataEmpty && <b className={styles.queryMessage}>{queryMessage}</b>}
       </div>
       <div className={styles.result}>
