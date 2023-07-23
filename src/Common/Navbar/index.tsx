@@ -1,6 +1,6 @@
 import ThemeToggler from './ThemeToggler';
 
-import logo from '../../Assets/SqlEditorLogo.svg';
+import logo from '../../Assets/SqlEditorLogo.png';
 
 import styles from './navbar.module.css';
 
