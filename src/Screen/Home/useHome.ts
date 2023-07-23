@@ -1,19 +1,19 @@
-import { useEffect, useState, useRef } from "react";
+import { useEffect, useRef, useReducer } from "react";
 
-import { deleteLocalStorageData, setLocalStorageData } from "../../Utils/storageUtils";
+import {
+  deleteLocalStorageData,
+  setLocalStorageData,
+} from "../../Utils/storageUtils";
 
 import { tables } from "../../Constants/table";
 import { HISTORY_STORAGE_KEY } from "../../Constants/localStorageKeys";
 
-import { initialHistoryItems, queryHistory, sampleQuery } from "./homeHelper";
+import { queryHistory, sampleQuery } from "./homeHelper";
+import { Actions, initialState, reducer } from "./reducer";
 
 export const useHome = () => {
-  const [inputCode, setInputCode] = useState("");
-  const [isExecuting, setIsExecuting] = useState(false);
-  const [historyItems, setHistoryItems] = useState<string[]>(initialHistoryItems);
-
-  const [tableData, setTableData] = useState<string[][]>([]);
-  const [tableHeader, setTableHeader] = useState<string[]>([]);
+  const [state, dispatch] = useReducer(reducer, initialState);
+  const { inputCode, isExecuting, historyItems, tableData, tableHeader } = state;
 
   const latestTableData = useRef<string[][]>(tables.table6.data);
   const latestTableHeader = useRef<string[]>(tables.table6.columnsHeader);
@@ -62,8 +62,11 @@ export const useHome = () => {
       setIsExecuting(false);
 
       if (!queryHistory[code]) {
-        setHistoryItems((prevHistoryItems) => [...prevHistoryItems, code]);
-        queryHistory[code] = { data: latestTableData.current, columnsHeader: latestTableHeader.current };
+        setHistoryItems([ ...historyItems, code]);
+        queryHistory[code] = {
+          data: latestTableData.current,
+          columnsHeader: latestTableHeader.current,
+        };
         setLocalStorageData(HISTORY_STORAGE_KEY, queryHistory);
       }
 
@@ -82,7 +85,28 @@ export const useHome = () => {
   const onclearHistoryClick = () => {
     setHistoryItems([]);
     deleteLocalStorageData(HISTORY_STORAGE_KEY);
-  }
+  };
+
+  
+  const setInputCode = (code: string) => {
+    dispatch({ type: Actions.SET_INPUT_CODE, payload: code });
+  };
+
+  const setIsExecuting = (isExecuting: boolean) => {
+    dispatch({ type: Actions.SET_IS_EXECUTING, payload: isExecuting });
+  };
+
+  const setTableData = (data: string[][]) => {
+    dispatch({ type: Actions.SET_TABLE_DATA, payload: data });
+  };
+
+  const setTableHeader = (header: string[]) => {
+    dispatch({ type: Actions.SET_TABLE_HEADER, payload: header });
+  };
+
+  const setHistoryItems = (items: string[]) => {
+    dispatch({ type: Actions.SET_HISTORY_ITEMS, payload: items });
+  };
 
   return {
     tableData,
