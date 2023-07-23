@@ -8,6 +8,14 @@ export const initialState: ReducerState = {
   tableHeader: [],
 };
 
+export const enum Actions {
+  SET_INPUT_CODE = "SET_INPUT_CODE",
+  SET_IS_EXECUTING = "SET_IS_EXECUTING",
+  SET_HISTORY_ITEMS = "SET_HISTORY_ITEMS",
+  SET_TABLE_DATA = "SET_TABLE_DATA",
+  SET_TABLE_HEADER = "SET_TABLE_HEADER",
+}
+
 export const reducer = (state: typeof initialState, action: ActionType) => {
   switch (action.type) {
     case Actions.SET_INPUT_CODE:
@@ -25,14 +33,6 @@ export const reducer = (state: typeof initialState, action: ActionType) => {
   }
 };
 
-export const enum Actions {
-  SET_INPUT_CODE = "SET_INPUT_CODE",
-  SET_IS_EXECUTING = "SET_IS_EXECUTING",
-  SET_HISTORY_ITEMS = "SET_HISTORY_ITEMS",
-  SET_TABLE_DATA = "SET_TABLE_DATA",
-  SET_TABLE_HEADER = "SET_TABLE_HEADER",
-}
-
 type ActionType =
   | { type: Actions.SET_INPUT_CODE; payload: string }
   | { type: Actions.SET_IS_EXECUTING; payload: boolean }
@@ -40,11 +40,10 @@ type ActionType =
   | { type: Actions.SET_TABLE_DATA; payload: string[][] }
   | { type: Actions.SET_TABLE_HEADER; payload: string[] };
 
-
 type ReducerState = {
-    inputCode: string,
-    isExecuting: boolean,
-    historyItems: string[],
-    tableData: string[][],
-    tableHeader: string[],
-}
+  inputCode: string;
+  isExecuting: boolean;
+  historyItems: string[];
+  tableData: string[][];
+  tableHeader: string[];
+};

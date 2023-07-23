@@ -8,12 +8,13 @@ import {
 import { tables } from "../../Constants/table";
 import { HISTORY_STORAGE_KEY } from "../../Constants/localStorageKeys";
 
-import { queryHistory, sampleQuery } from "./homeHelper";
+import { queryHistory, sampleQuery, getTableFromName } from "./homeHelper";
 import { Actions, initialState, reducer } from "./reducer";
 
 export const useHome = () => {
   const [state, dispatch] = useReducer(reducer, initialState);
-  const { inputCode, isExecuting, historyItems, tableData, tableHeader } = state;
+  const { inputCode, isExecuting, historyItems, tableData, tableHeader } =
+    state;
 
   const latestTableData = useRef<string[][]>(tables.table6.data);
   const latestTableHeader = useRef<string[]>(tables.table6.columnsHeader);
@@ -29,32 +30,29 @@ export const useHome = () => {
     setTableHeader(header);
   };
 
-  const fetchTableData = (code: string) => {
-    let data: string[][] = [];
-    let header: string[] = [];
+  const fetchTable = (code: string) => {
+    let tableName = "";
 
     if (sampleQuery[code]) {
-      data = sampleQuery[code].data;
-      header = sampleQuery[code].columnsHeader;
+      tableName = sampleQuery[code];
     } else if (queryHistory[code]) {
-      data = queryHistory[code].data;
-      header = queryHistory[code].columnsHeader;
+      tableName = queryHistory[code];
     } else {
       const randomTableNumber = Math.floor(Math.random() * 5) + 6;
-      const randomTable = `table${randomTableNumber}`;
-      data = tables[randomTable].data;
-      header = tables[randomTable].columnsHeader;
+      tableName = `table${randomTableNumber}`;
     }
 
-    return { data, header };
+    return tableName;
   };
 
   const runCodeClick = (code: string) => {
     if (code.trim() === "") return;
 
     setIsExecuting(true);
-    const { data, header } = fetchTableData(code);
-    updateTableState(data, header);
+    const tableName = fetchTable(code);
+    const { data, columnsHeader } = getTableFromName(tableName);
+
+    updateTableState(data, columnsHeader);
 
     if (timerRef.current) clearTimeout(timerRef.current);
 
@@ -62,11 +60,8 @@ export const useHome = () => {
       setIsExecuting(false);
 
       if (!queryHistory[code]) {
-        setHistoryItems([ ...historyItems, code]);
-        queryHistory[code] = {
-          data: latestTableData.current,
-          columnsHeader: latestTableHeader.current,
-        };
+        setHistoryItems([...historyItems, code]);
+        queryHistory[code] = tableName;
         setLocalStorageData(HISTORY_STORAGE_KEY, queryHistory);
       }
 
@@ -87,7 +82,6 @@ export const useHome = () => {
     deleteLocalStorageData(HISTORY_STORAGE_KEY);
   };
 
-  
   const setInputCode = (code: string) => {
     dispatch({ type: Actions.SET_INPUT_CODE, payload: code });
   };
