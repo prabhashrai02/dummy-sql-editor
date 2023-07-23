@@ -1,7 +1,8 @@
 .codeEditor {
   display: flex;
   width: 100%;
-  height: 300px;
+  min-height: 300px;
+  height: 35dvh;
   border: 1px solid var(--editorBorderColor);
   background-color: var(--editorBgColor);
   color: var(--editorTextColor);
