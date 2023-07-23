@@ -1,6 +1,6 @@
 {
-  "short_name": "React App",
-  "name": "Create React App Sample",
+  "short_name": "SQLProEdit",
+  "name": "The Smart SQL Editor",
   "icons": [
     {
       "src": "favicon.ico",
