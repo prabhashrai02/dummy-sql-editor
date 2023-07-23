@@ -1,14 +1,14 @@
 {
   "files": {
-    "main.css": "/dummy-sql-editor/static/css/main.79cd844a.css",
+    "main.css": "/dummy-sql-editor/static/css/main.6e64fc8c.css",
     "main.js": "/dummy-sql-editor/static/js/main.f59c00f6.js",
     "static/media/SqlEditorLogo.png": "/dummy-sql-editor/static/media/SqlEditorLogo.86cdb54cc5fc9c392ebd.png",
     "index.html": "/dummy-sql-editor/index.html",
-    "main.79cd844a.css.map": "/dummy-sql-editor/static/css/main.79cd844a.css.map",
+    "main.6e64fc8c.css.map": "/dummy-sql-editor/static/css/main.6e64fc8c.css.map",
     "main.f59c00f6.js.map": "/dummy-sql-editor/static/js/main.f59c00f6.js.map"
   },
   "entrypoints": [
-    "static/css/main.79cd844a.css",
+    "static/css/main.6e64fc8c.css",
     "static/js/main.f59c00f6.js"
   ]
 }
