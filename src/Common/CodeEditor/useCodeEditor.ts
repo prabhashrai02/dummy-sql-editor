@@ -1,8 +1,22 @@
 import { useState, useRef, useEffect } from "react";
 
-const useCodeEditor = (initialCode: string = "", initialTheme: string = "darkTheme") => {
+import { CODE_EDITOR_THEME_KEY } from "../../Constants/localStorageKeys";
+import {
+  getLocalStorageData,
+  setLocalStorageData,
+} from "../../Utils/storageUtils";
+
+const useCodeEditor = (
+  initialCode: string = "",
+  initialTheme: string = "darkTheme"
+) => {
+  const initialCodeEditorTheme =
+    getLocalStorageData<string>(CODE_EDITOR_THEME_KEY) || initialTheme;
+
   const [code, setCode] = useState<string>(initialCode);
-  const [selectedTheme, setSelectedTheme] = useState<string>(initialTheme);
+  const [selectedTheme, setSelectedTheme] = useState<string>(
+    initialCodeEditorTheme
+  );
   const textAreaRef = useRef<HTMLTextAreaElement>(null);
   const lineNumberRef = useRef<HTMLDivElement>(null);
 
@@ -21,7 +35,7 @@ const useCodeEditor = (initialCode: string = "", initialTheme: string = "darkThe
   };
 
   const onClearEditor = () => {
-    setCode('');
+    setCode("");
   };
 
   const syncScroll = () => {
@@ -45,6 +59,7 @@ const useCodeEditor = (initialCode: string = "", initialTheme: string = "darkThe
 
   const handleThemeChange = (theme: string) => {
     setSelectedTheme(theme);
+    setLocalStorageData(CODE_EDITOR_THEME_KEY, theme);
   };
 
   return {
