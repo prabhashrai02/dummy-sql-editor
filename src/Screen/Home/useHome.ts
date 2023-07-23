@@ -2,8 +2,10 @@ import { useEffect, useState, useRef } from "react";
 
 import { setLocalStorageData } from "../../Utils/storageUtils";
 
-import { HISTORY_STORAGE_KEY, initialHistoryItems, queryHistory, sampleQuery } from "./homeHelper";
 import { tables } from "../../Constants/table";
+import { HISTORY_STORAGE_KEY } from "../../Constants/localStorageKeys";
+
+import { initialHistoryItems, queryHistory, sampleQuery } from "./homeHelper";
 
 export const useHome = () => {
   const [inputCode, setInputCode] = useState("");
