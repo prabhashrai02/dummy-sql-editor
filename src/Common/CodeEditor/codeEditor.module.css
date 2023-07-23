@@ -58,7 +58,7 @@
   flex-direction: column;
   align-items: center;
   padding: 10px;
-  width: 40px;
+  min-width: 40px;
   background-color: var(--lineNumberBgColor);
   color: var(--editorTextColor);
   user-select: none;
@@ -68,9 +68,7 @@
 }
 
 .lineNumber {
-  font-size: 12px;
   opacity: 0.6;
-  line-height: 20px;
 }
 
 .codeTextArea {

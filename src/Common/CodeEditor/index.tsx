@@ -1,3 +1,5 @@
+import { useState } from "react";
+
 import InputDropdown from "../InputDropdown";
 import useCodeEditor from "./useCodeEditor";
 
@@ -9,6 +11,7 @@ const CodeEditor = (props: CodeEditorProps) => {
 
   const {
     code,
+    fontOptions,
     themeOptions,
     selectedTheme,
     textAreaRef,
@@ -20,6 +23,14 @@ const CodeEditor = (props: CodeEditorProps) => {
     handleThemeChange,
   } = useCodeEditor(initialCode, "darkTheme");
 
+  const [fontSize, setFontSize] = useState<number>(16);
+
+  const lineHeight = fontSize * 1.5;
+
+  const handleFontSizeChange = (size: string) => {
+    setFontSize(Number(size));
+  };
+
   return (
     <div>
       <div className={styles.toolbar}>
@@ -29,6 +40,13 @@ const CodeEditor = (props: CodeEditorProps) => {
           selectedOption={selectedTheme}
           options={themeOptions}
           onOptionChange={handleThemeChange}
+        />
+        <InputDropdown
+          label={"Font Size"}
+          labelPosition="left"
+          selectedOption={String(fontSize)}
+          options={fontOptions}
+          onOptionChange={handleFontSizeChange}
         />
         <div className={styles.buttonContainer}>
           {isExecuting ? (
@@ -43,12 +61,16 @@ const CodeEditor = (props: CodeEditorProps) => {
               disabled={isButtonDisable}
               className={styles.runButton}
               onClick={() => onRunButtonClick(code)}
-              >
+            >
               Run
             </button>
           )}
 
-          <button disabled={isButtonDisable} className={styles.clearButton} onClick={onClearEditor}>
+          <button
+            disabled={isButtonDisable}
+            className={styles.clearButton}
+            onClick={onClearEditor}
+          >
             Clear
           </button>
         </div>
@@ -56,7 +78,14 @@ const CodeEditor = (props: CodeEditorProps) => {
       <div className={`${styles.codeEditor} ${styles[selectedTheme]}`}>
         <div ref={lineNumberRef} className={styles.lineNumbers}>
           {code.split("\n").map((_, index) => (
-            <div key={index} className={styles.lineNumber}>
+            <div
+              key={index}
+              className={styles.lineNumber}
+              style={{
+                fontSize: `${fontSize}px`,
+                lineHeight: `${lineHeight}px`,
+              }}
+            >
               {index + 1}
             </div>
           ))}
@@ -68,6 +97,7 @@ const CodeEditor = (props: CodeEditorProps) => {
           onChange={handleCodeChange}
           onScroll={handleScroll}
           placeholder="Enter your query here..."
+          style={{ fontSize: `${fontSize}px`, lineHeight: `${lineHeight}px` }}
         />
       </div>
     </div>

@@ -30,6 +30,14 @@ const useCodeEditor = (
     { key: "GitHub Theme", value: "gitHubTheme" },
   ];
 
+  const fontOptions = [
+    { key: "12", value: "12" },
+    { key: "16", value: "16" },
+    { key: "18", value: "18" },
+    { key: "20", value: "20" },
+    { key: "22", value: "22" }
+  ];
+
   useEffect(() => {
     setIsButtonDisable(code.trim() === "");
   }, [code])
@@ -68,6 +76,7 @@ const useCodeEditor = (
 
   return {
     code,
+    fontOptions,
     themeOptions,
     selectedTheme,
     textAreaRef,
