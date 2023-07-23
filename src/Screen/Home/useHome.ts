@@ -12,8 +12,8 @@ export const useHome = () => {
   const [isExecuting, setIsExecuting] = useState(false);
   const [historyItems, setHistoryItems] = useState<string[]>(initialHistoryItems);
 
-  const [tableData, setTableData] = useState<string[][]>(tables.table6.data);
-  const [tableHeader, setTableHeader] = useState<string[]>(tables.table6.columnsHeader);
+  const [tableData, setTableData] = useState<string[][]>([]);
+  const [tableHeader, setTableHeader] = useState<string[]>([]);
 
   const latestTableData = useRef<string[][]>(tables.table6.data);
   const latestTableHeader = useRef<string[]>(tables.table6.columnsHeader);

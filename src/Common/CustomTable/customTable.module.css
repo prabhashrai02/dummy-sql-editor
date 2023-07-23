@@ -20,6 +20,10 @@
   top: 30%;
 }
 
+.queryMessage {
+  font-size: 20px;
+}
+
 .result {
   height: calc(100% - 48px);
   overflow: auto;
