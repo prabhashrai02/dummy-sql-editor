@@ -38,6 +38,8 @@ code {
   --buttonColor: #55a55a;
   --cancelButtonColor: #e91e63;
   --disableButtonBgColor: #6b7280;
+  --sunColor: #ffc02f;
+  --sunGlowColor: #ffec60;
 }
 
 .darkTheme {
