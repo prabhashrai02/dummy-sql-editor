@@ -1,0 +1,8 @@
+{
+  "data": [
+    ["John", "Male", "25", "Engineer", "USA"],
+    ["Emily", "Female", "30", "Designer", "Canada"],
+    ["Michael", "Male", "28", "Doctor", "UK"]
+  ],
+  "columnsHeader": ["Name", "Gender", "Age", "Occupation", "Country"]
+}

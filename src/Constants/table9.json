@@ -1,0 +1,8 @@
+{
+  "data": [
+    ["Alex", "Male", "29", "Manager", "Australia"],
+    ["Sophie", "Female", "35", "Lawyer", "Italy"],
+    ["Daniel", "Male", "26", "Chef", "Russia"]
+  ],
+  "columnsHeader": ["Name", "Gender", "Age", "Occupation", "Country"]
+}

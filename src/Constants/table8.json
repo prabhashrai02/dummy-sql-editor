@@ -1,0 +1,8 @@
+{
+  "data": [
+    ["Alice", "Female", "24", "Artist", "France"],
+    ["Bob", "Male", "27", "Developer", "Germany"],
+    ["Eva", "Female", "22", "Student", "Spain"]
+  ],
+  "columnsHeader": ["Name", "Gender", "Age", "Occupation", "Country"]
+}

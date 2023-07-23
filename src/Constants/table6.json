@@ -1,0 +1,22 @@
+{
+  "data": [
+    ["Virat Kohli", "Batsman", "32", "250", "12000", "70.00"],
+    ["Rohit Sharma", "Batsman", "34", "220", "11000", "60.00"],
+    ["Jasprit Bumrah", "Bowler", "27", "100", "150", "25.00"],
+    ["KL Rahul", "Batsman", "29", "180", "8000", "45.00"],
+    ["Ravindra Jadeja", "All-Rounder", "32", "180", "5000", "30.00"],
+    ["Shikhar Dhawan", "Batsman", "35", "200", "9000", "50.00"],
+    ["Mohammed Shami", "Bowler", "31", "120", "200", "28.00"],
+    ["Hardik Pandya", "All-Rounder", "27", "100", "3000", "35.00"],
+    ["Yuzvendra Chahal", "Bowler", "31", "80", "100", "15.00"],
+    ["Ajinkya Rahane", "Batsman", "33", "100", "4500", "40.00"]
+  ],
+  "columnsHeader": [
+    "Player Name",
+    "Role",
+    "Age",
+    "Matches Played",
+    "Runs Scored",
+    "Batting Average"
+  ]
+}

@@ -1,92 +1,30 @@
+import table1Data from "./table1.json";
+import table2Data from "./table2.json";
+import table3Data from "./table3.json";
+import table4Data from "./table4.json";
+import table5Data from "./table5.json";
+import table6Data from "./table6.json";
+import table7Data from "./table7.json";
+import table8Data from "./table8.json";
+import table9Data from "./table9.json";
+import table10Data from "./table10.json";
+
 export const tables: QueryTable = {
-  table1: {
-    data: [
-      ["John", "30", "Male", "USA", "Engineer", "Single", "New York", "Java", "Basketball", "Rock", "Coffee", "Sunny", "Beach", "Reading", "Tech", "Coding", "Action", "Pizza", "Summer", "Mountains", "Travel", "Photography", "Movies", "Gaming"],
-      ["Jane", "25", "Female", "Canada", "Teacher", "Married", "Toronto", "Python", "Football", "Pop", "Tea", "Rainy", "Mountains", "Movies", "Education", "Writing", "Romance", "Pasta", "Winter", "Beach", "Food", "Reading", "Hiking", "Art"],
-    ],
-    columnsHeader: ["Name", "Age", "Gender", "Country", "Occupation", "Marital Status", "City", "Programming Language", "Hobby", "Music Genre", "Drink", "Weather", "Location", "Interest", "Field", "Activity", "Style", "Favorite Food", "Season", "Destination", "Hobby Type", "Interest Area", "Favorite Movie Genre", "Game"]
-  },
-  table2: {
-    data: [
-      ["John", "Hip Hop", "Professional", "New York", "USA", "Gold", "Sunny", "Basketball", "Coffee"],
-      ["Emily", "Ballet", "Intermediate", "Los Angeles", "USA", "Silver", "Rainy", "Swimming", "Tea"],
-    ],
-    columnsHeader: ["Dancer Name", "Style", "Level", "City", "Country", "Achievement", "Weather", "Favorite Sport", "Favorite Drink"]
-  },
-  table3: {
-    data: [
-      ["Michael", "PC", "Action", "Strategy", "PlayStation", "Weekends", "Single Player", "Online", "FPS"],
-      ["Emma", "Console", "Adventure", "Racing", "Nintendo Switch", "Evenings", "Multiplayer", "Offline", "RPG"],
-    ],
-    columnsHeader: ["Gamer Name", "Preferred Platform", "Favorite Genre 1", "Favorite Genre 2", "Console of Choice", "Gaming Time", "Preferred Mode", "Online/Offline", "Favorite Game Type"]
-  },
-  table4: {
-    data: [
-      ["John", "Beach", "Summer", "Bora Bora", "Tahiti", "Relaxing", "Seafood", "Snorkeling"],
-      ["Emily", "Mountain", "Winter", "Zermatt", "Switzerland", "Snowboarding", "Fondue", "Skiing"],
-    ],
-    columnsHeader: ["Traveler Name", "Destination Type", "Favorite Season", "Favorite Destination", "Country", "Activity", "Favorite Food"]
-  },
-  table5: {
-    data: [
-      ["Ava", "Romance", "Fiction", "Jane Austen", "Pride and Prejudice", "Completed", "5", "England"],
-      ["Sophia", "Mystery", "Thriller", "Agatha Christie", "Murder on the Orient Express", "In Progress", "3", "USA"],
-    ],
-    columnsHeader: ["Reader Name", "Favorite Genre 1", "Favorite Genre 2", "Favorite Author", "Favorite Book", "Reading Status", "Rating (out of 5)", "Location"]
-  },
-  table6: {
-    data: [
-      ["Virat Kohli", "Batsman", "32", "250", "12000", "70.00"],
-      ["Rohit Sharma", "Batsman", "34", "220", "11000", "60.00"],
-      ["Jasprit Bumrah", "Bowler", "27", "100", "150", "25.00"],
-      ["KL Rahul", "Batsman", "29", "180", "8000", "45.00"],
-      ["Ravindra Jadeja", "All-Rounder", "32", "180", "5000", "30.00"],
-      ["Shikhar Dhawan", "Batsman", "35", "200", "9000", "50.00"],
-      ["Mohammed Shami", "Bowler", "31", "120", "200", "28.00"],
-      ["Hardik Pandya", "All-Rounder", "27", "100", "3000", "35.00"],
-      ["Yuzvendra Chahal", "Bowler", "31", "80", "100", "15.00"],
-      ["Ajinkya Rahane", "Batsman", "33", "100", "4500", "40.00"],
-    ],
-    columnsHeader: ["Player Name", "Role", "Age", "Matches Played", "Runs Scored", "Batting Average"]
-  },
-  table7: {
-    data: [
-      ["John", "Male", "25", "Engineer", "USA"],
-      ["Emily", "Female", "30", "Designer", "Canada"],
-      ["Michael", "Male", "28", "Doctor", "UK"],
-    ],
-    columnsHeader: ["Name", "Gender", "Age", "Occupation", "Country"]
-  },
-  table8: {
-    data: [
-      ["Alice", "Female", "24", "Artist", "France"],
-      ["Bob", "Male", "27", "Developer", "Germany"],
-      ["Eva", "Female", "22", "Student", "Spain"],
-    ],
-    columnsHeader: ["Name", "Gender", "Age", "Occupation", "Country"]
-  },
-  table9: {
-    data: [
-      ["Alex", "Male", "29", "Manager", "Australia"],
-      ["Sophie", "Female", "35", "Lawyer", "Italy"],
-      ["Daniel", "Male", "26", "Chef", "Russia"],
-    ],
-    columnsHeader: ["Name", "Gender", "Age", "Occupation", "Country"]
-  },
-  table10: {
-    data: [
-      ["Mia", "Female", "23", "Teacher", "Japan"],
-      ["Henry", "Male", "31", "Writer", "Brazil"],
-      ["Isabella", "Female", "28", "Photographer", "Mexico"],
-    ],
-    columnsHeader: ["Name", "Gender", "Age", "Occupation", "Country"]
-  }
-}
+  table1: table1Data,
+  table2: table2Data,
+  table3: table3Data,
+  table4: table4Data,
+  table5: table5Data,
+  table6: table6Data,
+  table7: table7Data,
+  table8: table8Data,
+  table9: table9Data,
+  table10: table10Data,
+};
 
 export type QueryTable = { [key: string]: Table };
 
 export type Table = {
   data: string[][];
   columnsHeader: string[];
-}
-
+};
