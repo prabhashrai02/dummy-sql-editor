@@ -1,46 +1,63 @@
-# Getting Started with Create React App
+# The Smart SQL Editor
+![image](https://github.com/prabhashrai02/dummy-sql-editor/assets/73634195/ac55185e-8ad2-4375-9ca7-5d977add2774)
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## Overview
 
-## Available Scripts
+This project is a feature-rich data visualization and SQL editor tool that allows users to run queries, view results in a customizable table format, and perform various actions to enhance the user experience. The application supports two themes (dark and light) and stores the user's query history, theme preference, and code editor theme in local storage for a seamless and personalized experience.
 
-In the project directory, you can run:
+## Live Project
 
-### `npm start`
+The live version of the project is accessible here: [Live Demo](https://prabhashrai02.github.io/dummy-sql-editor/)
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+## Technologies Used
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+- JavaScript
+- React.js
+- React Table (major plugin for displaying tabular data)
 
-### `npm test`
+## Features
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+- Responsive Design: The application is built with responsive design principles, ensuring that it works seamlessly across various devices, including mobile phones, tablets, and PCs. The user interface automatically adapts to different screen sizes and orientations for an optimal viewing experience.
 
-### `npm run build`
+- Two Themes: The application supports both dark and light themes, allowing users to choose their preferred visual appearance.
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+- Persistent History: The query history is stored in local storage, allowing users to access their previous queries even after closing the application.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+- Persistent App Theme: The user's preferred theme choice is stored in local storage, ensuring that the theme is maintained across different sessions.
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+- Persistent Code Editor Theme: The user's code editor theme preference is stored in local storage, maintaining the chosen theme even after page reloads.
 
-### `npm run eject`
+- Persistent Font Size: The selected font size in the code editor is stored in local storage, allowing users to retain their preferred font size.
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+- Sample Query: The application provides a sample query that users can use as a starting point for their own queries.
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+- Seven Code Editor Themes: Users have the option to choose from seven different themes for the code editor, customizing their coding experience.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+- Font Size Adjustment: The code editor supports changing the font size, enabling users to adjust it according to their preference.
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+- Export to CSV: Users can export table data to CSV format, making it easy to save and analyze the results offline.
 
-## Learn More
+- Clear History: Functionality to clear the query history, allowing users to start fresh.
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+- Clear Code Editor: One-click functionality to clear the code editor, making it convenient to remove existing queries.
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+- Search Feature: Users can search for specific queries within the history and the sample query list.
+
+- Query Prefill: Clicking on a sample query or history item prefills the query in the code editor, saving time on manual input.
+
+## Performance Report
+
+![image](https://github.com/prabhashrai02/dummy-sql-editor/assets/73634195/915dcfc2-6ddb-4797-8bcd-fc5ba958fbfa)
+
+![image](https://github.com/prabhashrai02/dummy-sql-editor/assets/73634195/0db19335-6217-47a9-a1af-c87b536f9269)
+
+
+
+## Installation and Running the Project
+
+To run the project locally, follow these steps:
+
+1. Clone the repository to your local machine.
+2. Navigate to the project directory and install dependencies using `npm install`.
+3. Start the development server using `npm start`.
+4. Open your browser and access the application at `http://localhost:3000`.
