@@ -17,6 +17,8 @@ The live version of the project is accessible here: [Live Demo](https://prabhash
 
 ## Features
 
+- Responsive Design: The application is built with responsive design principles, ensuring that it works seamlessly across various devices, including mobile phones, tablets, and PCs. The user interface automatically adapts to different screen sizes and orientations for an optimal viewing experience.
+
 - Two Themes: The application supports both dark and light themes, allowing users to choose their preferred visual appearance.
 
 - Persistent History: The query history is stored in local storage, allowing users to access their previous queries even after closing the application.
@@ -42,6 +44,14 @@ The live version of the project is accessible here: [Live Demo](https://prabhash
 - Search Feature: Users can search for specific queries within the history and the sample query list.
 
 - Query Prefill: Clicking on a sample query or history item prefills the query in the code editor, saving time on manual input.
+
+## Performance Report
+
+![image](https://github.com/prabhashrai02/dummy-sql-editor/assets/73634195/915dcfc2-6ddb-4797-8bcd-fc5ba958fbfa)
+
+![image](https://github.com/prabhashrai02/dummy-sql-editor/assets/73634195/0db19335-6217-47a9-a1af-c87b536f9269)
+
+
 
 ## Installation and Running the Project
 
