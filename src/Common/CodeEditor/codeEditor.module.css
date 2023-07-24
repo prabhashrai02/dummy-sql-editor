@@ -13,7 +13,16 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin-bottom: 16px;
+  margin: auto auto 16px auto;
+  flex-wrap: wrap;
+}
+
+.dropdownContainer {
+  display: flex;
+}
+
+.dropdownContainer > div :nth-child(n+1) {
+  margin: 0 4px;
 }
 
 .buttonContainer {
@@ -160,13 +169,24 @@
 }
 
 
-@media screen and (max-width: 500px) {
-  .toolbar {
-    flex-direction: column;
+@media screen and (max-width: 920px) {
+  .dropdownContainer {
+    width: 100%;
+    justify-content: space-between;
   }
 
   .buttonContainer {
     width: 100%;
     justify-content: space-between;
+  }
+}
+
+@media screen and (max-width: 500px) {
+  .toolbar {
+    flex-direction: column;
+  }
+
+  .dropdownContainer {
+    flex-direction: column;
   }
 }

@@ -27,20 +27,22 @@ const CodeEditor = (props: CodeEditorProps) => {
   return (
     <div>
       <div className={styles.toolbar}>
-        <InputDropdown
-          label={"Theme"}
-          labelPosition="left"
-          selectedOption={selectedTheme}
-          options={themeOptions}
-          onOptionChange={handleThemeChange}
-        />
-        <InputDropdown
-          label={"Font Size"}
-          labelPosition="left"
-          selectedOption={String(fontSize)}
-          options={fontOptions}
-          onOptionChange={handleFontSizeChange}
-        />
+        <div className={styles.dropdownContainer}>
+          <InputDropdown
+            label={"Theme"}
+            labelPosition="left"
+            selectedOption={selectedTheme}
+            options={themeOptions}
+            onOptionChange={handleThemeChange}
+          />
+          <InputDropdown
+            label={"Font Size"}
+            labelPosition="left"
+            selectedOption={String(fontSize)}
+            options={fontOptions}
+            onOptionChange={handleFontSizeChange}
+          />
+        </div>
         <div className={styles.buttonContainer}>
           {isExecuting ? (
             <button
