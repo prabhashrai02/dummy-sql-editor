@@ -6,7 +6,7 @@ import {
   setLocalStorageData,
 } from "../../Utils/storageUtils";
 
-const useCodeEditor = ( initialCode: string = "", initialTheme: string = "darkTheme" ) => {
+const useCodeEditor = ( initialCode: string = "", initialTheme: string = "darkTheme", onClearButtonClick: () => void) => {
   const initialCodeEditorTheme = getLocalStorageData<string>(CODE_EDITOR_THEME_KEY) || initialTheme;
   const initialCodeFontSizeTheme = getLocalStorageData<string>(CODE_EDITOR_FONT_SIZE_KEY) || "16";
 
@@ -61,6 +61,7 @@ const useCodeEditor = ( initialCode: string = "", initialTheme: string = "darkTh
 
   const onClearEditor = () => {
     setCode("");
+    onClearButtonClick();
   };
 
   const syncScroll = () => {

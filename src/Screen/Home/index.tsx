@@ -19,6 +19,7 @@ const Home = () => {
     setInputCode,
     runCodeClick,
     cancelCodeClick,
+    clearInitialCode,
     onclearHistoryClick,
   } = useHome();
 
@@ -45,6 +46,7 @@ const Home = () => {
         <Card>
           <CodeEditor
             initialCode={inputCode}
+            onClearButtonClick={clearInitialCode}
             onRunButtonClick={(code) => runCodeClick(code)}
             onCancleButtonClick={cancelCodeClick}
             isExecuting={isExecuting}

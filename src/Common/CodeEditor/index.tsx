@@ -4,7 +4,7 @@ import useCodeEditor from "./useCodeEditor";
 import styles from "./codeEditor.module.css";
 
 const CodeEditor = (props: CodeEditorProps) => {
-  const { initialCode, isExecuting, onRunButtonClick, onCancleButtonClick } =
+  const { initialCode, isExecuting, onRunButtonClick, onClearButtonClick, onCancleButtonClick } =
     props;
 
   const {
@@ -22,7 +22,7 @@ const CodeEditor = (props: CodeEditorProps) => {
     handleScroll,
     handleThemeChange,
     handleFontSizeChange,
-  } = useCodeEditor(initialCode, "darkTheme");
+  } = useCodeEditor(initialCode, "darkTheme", onClearButtonClick);
 
   return (
     <div>
@@ -102,6 +102,7 @@ const CodeEditor = (props: CodeEditorProps) => {
 type CodeEditorProps = {
   initialCode?: string;
   onRunButtonClick: (code: string) => void;
+  onClearButtonClick: () => void;
   onCancleButtonClick: () => void;
   isExecuting: boolean;
 };

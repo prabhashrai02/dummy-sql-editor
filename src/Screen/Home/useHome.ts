@@ -77,6 +77,10 @@ export const useHome = () => {
     }
   };
 
+  const clearInitialCode = () => {
+    setInputCode("");
+  }
+
   const onclearHistoryClick = () => {
     setHistoryItems([]);
     deleteLocalStorageData(HISTORY_STORAGE_KEY);
@@ -111,6 +115,7 @@ export const useHome = () => {
     setInputCode,
     runCodeClick,
     cancelCodeClick,
+    clearInitialCode,
     onclearHistoryClick,
   };
 };
